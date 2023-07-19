@@ -15,8 +15,12 @@
 		BoardDTO_01 boardDTO_01 = new BoardDTO_01();
 		
 		boardDTO_01.setWriter(request.getParameter("writer"));
-	
-	
+		boardDTO_01.setName(request.getParameter("name"));
+		boardDTO_01.setEmail(request.getParameter("email"));
+		boardDTO_01.setPassword(request.getParameter("password"));
+		boardDTO_01.setContent(request.getParameter("content"));
+		
+
 	
 	%>
 

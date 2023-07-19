@@ -1,6 +1,6 @@
 package boardEx_01;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class BoardDTO_01 {
 	
