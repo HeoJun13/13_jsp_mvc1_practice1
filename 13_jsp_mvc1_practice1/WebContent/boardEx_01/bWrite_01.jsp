@@ -8,8 +8,9 @@
 </head>
 <body>
 
+	<div align="center">
 		<h3>게시글 연습1</h3>
-		<form action="">
+		<form action="bWritepro_01.jsp" method="post">
 		
 		<table border="1">
 			<tr>
@@ -26,7 +27,7 @@
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="text" name="password"></td>
+				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>
 				<td>글내용</td>
@@ -35,12 +36,15 @@
 				</td>
 			</tr>
 		</table>
-		
+	</div>
+
+	<div align="center">
 		<p>
 			<input type="submit" value="작성">
-			<input type="button" value="목록보기">
-		</form>
+			<input type="button" value="목록보기" onclick = "location.href='bList_01.jsp'">
 		
 		</p>
+	</div>	
+	</form>
 </body>
 </html>

@@ -8,6 +8,13 @@ public class BoardDTO_01 {
 	private String writer;
 	private String name;
 	private String email;
+	private String subject;
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
 	private String password;
 	private String content;
 	private int readCnt;
@@ -67,5 +74,9 @@ public class BoardDTO_01 {
 				+ ", content=" + content + ", readCnt=" + readCnt + ", enrollDt=" + enrollDt + ", boardId=" + boardId
 				+ "]";
 	}
+	public void setReadCnt(long long1) {
+		
+	}
+	
 	
 }
