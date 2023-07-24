@@ -28,7 +28,7 @@
 			%>
 					<tr>
 						<td><%=idx %></td>
-						<td><a href ="?boardId=<%=boardDTO_01.getBoardId()%>"><%=boardDTO_01.getSubject() %></a></td>
+						<td><a href ="bDetail_01?boardId=<%=boardDTO_01.getBoardId()%>"><%=boardDTO_01.getSubject() %></a></td>
 						<td><%=boardDTO_01.getWriter() %></td>
 						<td><%=boardDTO_01.getEnrollDt() %></td>
 						<td><%=boardDTO_01.getReadCnt() %></td>				

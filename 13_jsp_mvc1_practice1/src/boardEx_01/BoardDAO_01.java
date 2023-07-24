@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class BoardDAO_01 {
 	
 	private BoardDAO_01(){}
@@ -25,7 +26,7 @@ public class BoardDAO_01 {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC1_PRACTICE?serverTimezone=Asia/Seoul", "root", "1234");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC2_PRACTICE?serverTimezone=Asia/Seoul", "root", "1234");
 			System.out.println("DB 접속 성공");
 		} catch (Exception e) {
 			System.out.println("DB연동에 실패했습니다");
@@ -47,10 +48,11 @@ public class BoardDAO_01 {
 		System.out.println(boardDTO_01);
 		
 		try {	
+			
 			getConnection();
 			
-			String sql = "INESRT INTO BOARD(WRITER , EMAIL , SUBJECT , PASSWORD , CONTENT , READ_CNT , ENROLL_DT)";
-				   sql += "VALUES(? , ? , ? , ? , ? , 0 , now())";
+			String sql = "INSERT INTO BOARD(WRITER , EMAIL , SUBJECT , PASSWORD , CONTENT , READ_CNT , ENROLL_DT)";
+				   sql += "VALUES(? , ? , ? , ? , ? , 0 , NOW())";
 				   
 				   pstmt = conn.prepareStatement(sql);
 				   pstmt.setString(1, boardDTO_01.getWriter());
@@ -58,6 +60,7 @@ public class BoardDAO_01 {
 				   pstmt.setString(3, boardDTO_01.getSubject());
 				   pstmt.setString(4, boardDTO_01.getPassword());
 				   pstmt.setString(5, boardDTO_01.getContent());
+				   pstmt.executeUpdate();
 			
 			} catch(Exception e) {
 			   e.printStackTrace();
@@ -96,11 +99,53 @@ public class BoardDAO_01 {
 			} finally {
 			   getClose();
 			}
+		System.out.println("나옵니다");
 		return boardList;
 	}
 	
 	
+	
+	public BoardDTO_01 getBoardDetail_01(long boardId) {
+		
+		
+		BoardDTO_01 BoardDTO_01 = null;
+		
+		try {	
+			
+			
+			getConnection();
+			
+			pstmt.setLong(1, boardId);
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement("SELELCT * FROM BOARD WHERE BOARD_ID = ?");
+			pstmt.setLong(1, boardId);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				BoardDTO_01 = new BoardDTO_01();
+				BoardDTO_01.setBoardId(boardId);
+				BoardDTO_01.setWriter(rs.getString("WRITER"));
+				BoardDTO_01.setEmail(rs.getString("EMAIL"));
+				BoardDTO_01.setSubject(rs.getString("SUBJECT"));
+				BoardDTO_01.setContent(rs.getString("CONTENT"));
+				BoardDTO_01.setReadCnt(rs.getLong("READ_CNT"));
+				BoardDTO_01.setEnrollDt(rs.getDate("ENROLL_DT"));
+			}
+		
+	} catch(Exception e) {
+		e.printStackTrace();
+	} finally {
+		getClose();
+	}
+		System.out.println(BoardDTO_01);
+	
+	return BoardDTO_01;
+	
+	}
+	
 }
+
 
 	
 	
