@@ -6,6 +6,7 @@
 <meta charset="EUC-KR">
 <title>Main</title>
 </head>
+
 <body>
 	<div align="center">
 	

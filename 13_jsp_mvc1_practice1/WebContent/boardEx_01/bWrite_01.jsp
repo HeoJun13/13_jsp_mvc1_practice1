@@ -19,7 +19,7 @@
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="subject"></td>
 			</tr>
 			<tr>
 				<td>이메일</td>

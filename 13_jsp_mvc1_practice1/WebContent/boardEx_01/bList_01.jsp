@@ -1,8 +1,8 @@
 <%@page import="boardEx_01.BoardDTO_01"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="boardEx_01.BoardDAO_01"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,14 @@
 <body>
 
 	<div align="center">
-		<h3>Ŀ�´�Ƽ �Խñ� ����1</h3>
+		<h3>커뮤니티 게시글 연습1</h3>
 		<table border="1">
 			<tr>
-				<td>��ȣ</td>
-				<td>����</td>
-				<td>�ۼ���</td>
-				<td>�ۼ���</td>
-				<td>��ȸ��</td>
+				<td>번호</td>
+				<td>제목</td>
+				<td>작성자</td>
+				<td>작성일</td>
+				<td>조회수</td>
 			</tr>
 			<%
 			  	int idx = 1;
@@ -28,7 +28,7 @@
 			%>
 					<tr>
 						<td><%=idx %></td>
-						<td><a href ="bDetail_01?boardId=<%=boardDTO_01.getBoardId()%>"><%=boardDTO_01.getSubject() %></a></td>
+						<td><a href ="bDetail_01.jsp?boardId=<%=boardDTO_01.getBoardId()%>"><%=boardDTO_01.getSubject() %></a></td>
 						<td><%=boardDTO_01.getWriter() %></td>
 						<td><%=boardDTO_01.getEnrollDt() %></td>
 						<td><%=boardDTO_01.getReadCnt() %></td>				
@@ -42,7 +42,7 @@
 			
 			<tr>
 				<td colspan="5">
-					<input type="button" value="�۾���" onclick="location.href='bWrite_01.jsp'">
+					<input type="button" value="글쓰기" onclick="location.href='bWrite_01.jsp'">
 				</td>
 			</tr>			
 </table>

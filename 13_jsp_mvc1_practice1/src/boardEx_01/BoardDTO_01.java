@@ -9,16 +9,17 @@ public class BoardDTO_01 {
 	private String name;
 	private String email;
 	private String subject;
+	private String password;
+	private String content;
+	private int readCnt;
+	private Date enrollDt;
+	
 	public String getSubject() {
 		return subject;
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	private String password;
-	private String content;
-	private int readCnt;
-	private Date enrollDt;
 	
 	public long getBoardId() {
 		return boardId;
@@ -59,9 +60,10 @@ public class BoardDTO_01 {
 	public int getReadCnt() {
 		return readCnt;
 	}
-	public void setReadCnt(int readCnt) {
-		this.readCnt = readCnt;
+	public void setReadCnt(long long1) {
+		
 	}
+
 	public Date getEnrollDt() {
 		return enrollDt;
 	}
@@ -73,9 +75,6 @@ public class BoardDTO_01 {
 		return "BoardDTO_01 [writer=" + writer + ", name=" + name + ", email=" + email + ", password=" + password
 				+ ", content=" + content + ", readCnt=" + readCnt + ", enrollDt=" + enrollDt + ", boardId=" + boardId
 				+ "]";
-	}
-	public void setReadCnt(long long1) {
-		
 	}
 	
 	
